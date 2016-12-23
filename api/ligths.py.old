@@ -1,0 +1,25 @@
+#!/usr/bin/python
+import sys,getopt
+import re
+from phue import Bridge
+
+b = Bridge('192.168.1.11')
+
+def toggle_lights(light=1):
+	if (b.get_light(light,'on')):
+		b.set_light(light,'on',False)
+	else:
+		b.set_light(light,'on',True)
+
+def status(light=1):
+	print 's'
+	return b.get_light(light,'on')
+			
+def router(arg):
+	return {
+		'toggle': toggle_lights(str(arg[2]).capitalize()),
+		'status': status(str(arg[2]).capitalize()),
+	}.get(arg[1], toggle_lights)
+
+if __name__ == "__main__":
+	router (sys.argv)
