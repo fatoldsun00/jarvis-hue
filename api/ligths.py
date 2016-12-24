@@ -29,7 +29,7 @@ lbl={
 		}
 	}
 
-def toggle_lights(light=1):
+def toggle_light(light=1):
 	global TOSAY
 	try:
 		if (b.get_light(light,'on')):
@@ -56,23 +56,32 @@ def status(light=1):
 		TOSAY = lbl[lang]['lamp']+' '+lbl[lang]['unknow']	
 	return TOSAY
 			
+def brightness(light, arg):
+	bri = arg[0]
+	bri = int(bri)/100*254
+	b.set_light(light,'bri',bri)
+	
 def router(arg):
 	return {
-		'toggle': toggle_lights,
+		'toggle': toggle_light,
 		'status': status,
+		'brightness':brightness
 	}
 
 def main():
 	global TOSAY
 	routes = router(sys.argv)
-
 	try:
 		#Recherche dans le dico si le mot n'a pas ete mal traduit par le stt
-		sys.argv[5]=ast.literal_eval(sys.argv[5])
-		sys.argv[4] =sys.argv[5].get(sys.argv[4], sys.argv[4])
-		light=str(sys.argv[4]).capitalize()
-		routes[sys.argv[3]](light)
-	except:
+		sys.argv[3]=ast.literal_eval(sys.argv[3])
+		sys.argv[5] =sys.argv[3].get(sys.argv[5], sys.argv[5])
+		light=str(sys.argv[5]).capitalize()
+		if len(sys.argv) > 6:
+			routes[sys.argv[4]](light,sys.argv[6:])
+		else:
+			routes[sys.argv[4]](light)
+	except  Exception as e:
+		print str(e)
 		TOSAY = lbl[lang]['command']+" "+lbl[lang]['unknow']
 		
 	print TOSAY

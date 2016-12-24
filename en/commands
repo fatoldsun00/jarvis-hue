@@ -1,3 +1,2 @@
-*LAMP (*) STATUs==python ./plugins/jarvis-hue/api/ligths.py ${language:0:2} $HUEIP "status" "(1)"
-*LAMP (*)==python ./plugins/jarvis-hue/api/ligths.py ${language:0:2} $HUEIP "toggle" "(1)"
-
+*LAMP (*) STATUS==say "$(python ./plugins/jarvis-hue/api/ligths.py ${language:0:2} $HUEIP "status" "(1)" "$mapWordLigth")"
+*LAMP (*)==say "$(python ./plugins/jarvis-hue/api/ligths.py ${language:0:2} $HUEIP "toggle" "(1)" "$mapWordLigth")"

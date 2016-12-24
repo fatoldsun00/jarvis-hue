@@ -1,2 +1,5 @@
-*LUMIERE (*) STATUT==say "$(python ./plugins/jarvis-hue/api/ligths.py ${language:0:2} $HUEIP "status" "(1)" "$mapWordLigth")"
-*LUMIERE (*)==say "$(python ./plugins/jarvis-hue/api/ligths.py ${language:0:2} $HUEIP "toggle" "(1)" "$mapWordLigth")"
+*LUMIERE (*) STATUT==say "$(python ./plugins/jarvis-hue/api/ligths.py ${language:0:2} $HUEIP "$mapWordLigth" "status" "(1)")"
+*LUMIERE (*) A (*) pourcent==say "$(python ./plugins/jarvis-hue/api/ligths.py ${language:0:2} $HUEIP "$mapWordLigth" brightness "(1)" "(2)")"
+*LUMIERE (*)==say "$(python ./plugins/jarvis-hue/api/ligths.py ${language:0:2} $HUEIP "$mapWordLigth" "toggle" "(1)")"
+
+#LUMIERE salON A 25 pourcent

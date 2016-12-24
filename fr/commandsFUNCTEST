@@ -1,4 +1,0 @@
-*LUMIERE (*) STATUT==say "(jv_pg_hu_lightsStatus ${language:0:2} $HUEIP status (1) $mapWordLigth)"
-*LUMIERE (*)== say "$(jv_pg_hu_lightsToggle ${language:0:2} $HUEIP toggle (1) $mapWordLigth)"
-
-s
