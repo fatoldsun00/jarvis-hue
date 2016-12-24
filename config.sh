@@ -3,3 +3,4 @@
 
 #HUEKEY="8MuF9rJCtc2XlaTK7u91klOsxIxIR7Av6zugKtk3" #GET --> http://IP BRIGGE/debug/clip.html ; URL = /api ; message body = {"devicetype":"jarvis#rasp"} ; command response --> HUEKEY :)
 HUEIP="192.168.1.11" #Bridge ip --> si vous la connaissez pas / if you don't know : http://www.advanced-ip-scanner.com/fr/
+mapWordLigth="{'ca va':'salon','salope':'salon','salaud':'salon'}"

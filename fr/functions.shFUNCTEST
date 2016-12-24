@@ -1,0 +1,12 @@
+#!/bin/bash
+# Here you can create functions which will be available from the commands file
+# You can also use here user variables defined in your config file
+#python ./plugins/jarvis-hue/api/ligths.py ${language:0:2} $HUEIP "toggle" "(1)" $mapWordLigth
+
+jv_pg_hu_lightsToggle () {
+	echo $(python ${PWD}/plugins/jarvis-hue/api/ligths.py $*)
+}
+
+jv_pg_hu_lightsStatus () {
+	echo $(python ${PWD}/plugins/jarvis-hue/api/ligths.py $*)
+}
