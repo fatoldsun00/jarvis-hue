@@ -52,7 +52,7 @@ def status(light=1):
 				
 		TOSAY = lbl[lang]['lamp']+' '+light+' '+statusS
 		
-	except:
+	except  Exception as e:
 		TOSAY = lbl[lang]['lamp']+' '+lbl[lang]['unknow']	
 	return TOSAY
 			
@@ -60,12 +60,19 @@ def brightness(light, arg):
 	bri = arg[0]
 	bri = (int(bri)/100)*254
 	b.set_light(light,'bri',bri)
+
+def hue(light, arg):
+	colors=ast.literal_eval(arg[0])
+	color=arg[1]
+	command =  {'on' : True, 'bri' : colors[color]['bri'],'hue':colors[color]['hue'],'sat':colors[color]['sat']}
+	b.set_light(light, command)
 	
 def router(arg):
 	return {
 		'toggle': toggle_light,
 		'status': status,
-		'brightness':brightness
+		'brightness':brightness,
+		'hue':hue
 	}
 
 def main():
