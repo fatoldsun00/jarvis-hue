@@ -23,6 +23,15 @@ You: Lumière (nom de la hue) statut
 jarvis: Lumière (nom de la hue) éteinte|allumé
 ```
 
+```
+You: Lumière (nom de la hue) en (couleur via nom mappé dans config)
+```
+
+```
+You: Lumière (nom de la hue) a X pourcent
+```
+
+
 ##Configuration
 - Avant le premier appel appuyez sur le bouton du bridge pour que l'appli puisse recuperer une clé d'acces a l'api
 
